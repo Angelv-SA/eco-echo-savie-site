@@ -1,0 +1,74 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const reseaux = [
+  "Universités",
+  "Instituts",
+  "Laboratoires",
+  "Organisations",
+  "Conférences",
+  "Projets",
+  "Partenaires",
+];
+
+const dialogue = [
+  "Entre les savoirs endogènes et les sciences contemporaines",
+  "Entre l'Afrique et le reste du monde",
+  "Entre les cultures",
+  "Entre les disciplines",
+  "Entre la recherche et les politiques publiques",
+];
+---
+
+<Layout title="Collaborer" description="Réseaux, partenariats et dialogue scientifique d'Eco Echo Savie.">
+  <section class="border-b border-ink/10 bg-sage">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-3">4 · Collaborer</p>
+      <h1 class="font-display text-3xl md:text-4xl text-forest leading-tight max-w-2xl">
+        Réseaux et collaborations
+      </h1>
+      <p class="mt-8 text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+        Cette rubrique favorise les échanges et les partenariats autour de la recherche :
+        l'intégration de l'écologie traditionnelle africaine dans les universités, les
+        collaborations avec des chercheurs, les réseaux internationaux et les projets
+        interdisciplinaires.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-wide text-ink/50 mb-6">Avec</p>
+    <ul class="flex flex-wrap gap-3">
+      {reseaux.map((r) => (
+        <li class="px-4 py-2 border border-forest/30 rounded-full text-sm text-forest">{r}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="border-t border-ink/10">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-6">Dialogue scientifique</p>
+      <ul class="space-y-4">
+        {dialogue.map((d) => (
+          <li class="border-t border-ink/15 pt-3 text-ink/85 max-w-prose">{d}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-t border-ink/10 bg-forest text-ivory">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-base md:text-lg leading-relaxed text-ivory/90 max-w-prose">
+        Vous menez des travaux ou des projets en lien avec l'écologie traditionnelle
+        africaine, les humanités environnementales ou l'éthique écologique&nbsp;? Eco Echo
+        Savie est ouverte au dialogue et aux collaborations scientifiques.
+      </p>
+      <a
+        href="/contacts"
+        class="mt-8 inline-flex items-center px-6 py-3 bg-ivory text-forest text-sm font-medium rounded hover:bg-gold hover:text-ink transition-colors"
+      >
+        Nous contacter
+      </a>
+    </div>
+  </section>
+</Layout>

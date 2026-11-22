@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const formats = [
+  { nom: "Articles de vulgarisation", description: "Rendre accessibles les grandes idées de la recherche." },
+  { nom: "Notes de recherche", description: "Des contributions académiques plus approfondies." },
+  { nom: "Ressources pédagogiques", description: "Supports destinés à l'enseignement et à la formation." },
+  { nom: "Interviews", description: "Échanges avec la fondatrice et d'autres chercheurs." },
+  { nom: "Citations", description: "Extraits marquants issus des travaux et lectures." },
+  { nom: "Vidéos", description: "Contenus audiovisuels de vulgarisation scientifique." },
+  { nom: "Podcasts", description: "À venir." },
+  { nom: "Bibliographie", description: "Ressources et références pour aller plus loin." },
+];
+---
+
+<Layout title="Transmettre" description="Le centre de diffusion des connaissances d'Eco Echo Savie : articles, ressources pédagogiques et bibliographie.">
+  <section class="border-b border-ink/10 bg-sage">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-3">5 · Transmettre</p>
+      <h1 class="font-display text-3xl md:text-4xl text-forest leading-tight max-w-2xl">
+        Diffuser et partager les connaissances
+      </h1>
+      <p class="mt-8 text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+        Cette rubrique constitue le centre de diffusion des connaissances produites par Eco
+        Echo Savie, sous des formats variés et accessibles à différents publics.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <div class="grid sm:grid-cols-2 gap-x-8 gap-y-10">
+      {formats.map((f) => (
+        <div class="border-t border-ink/15 pt-4">
+          <h2 class="font-display text-lg text-forest">{f.nom}</h2>
+          <p class="mt-2 text-sm text-ink/70 leading-relaxed">{f.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-t border-ink/10 bg-forest text-ivory">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm uppercase tracking-wide text-ivory/60 mb-3">Prochainement</p>
+      <p class="text-base md:text-lg leading-relaxed text-ivory/90 max-w-prose">
+        Une rubrique évolutive « Eco Echo Journal » (regards, chroniques, notes de recherche,
+        entretiens, carnets de terrain) ainsi qu'une rubrique « Concepts », véritable
+        encyclopédie des notions clés de l'écologie traditionnelle africaine, viendront enrichir
+        cet espace en phase 2.
+      </p>
+      <a
+        href="/contacts"
+        class="mt-8 inline-flex items-center px-6 py-3 bg-ivory text-forest text-sm font-medium rounded hover:bg-gold hover:text-ink transition-colors"
+      >
+        Nous contacter
+      </a>
+    </div>
+  </section>
+</Layout>

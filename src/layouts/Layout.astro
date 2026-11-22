@@ -1,0 +1,124 @@
+---
+const { title, description = "Eco Echo Savie — Écologie traditionnelle africaine, éthique environnementale, humanités environnementales." } = Astro.props;
+
+const nav = [
+  { label: "À propos", href: "/a-propos" },
+  { label: "Penser", href: "/penser" },
+  { label: "Rechercher", href: "/rechercher" },
+  { label: "Agir", href: "/agir" },
+  { label: "Collaborer", href: "/collaborer" },
+  { label: "Transmettre", href: "/transmettre" },
+  { label: "Contacts", href: "/contacts" },
+];
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="180x180" href="/favicon.png" />
+    <title>{title} · Eco Echo Savie</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="font-body">
+    <a href="#contenu" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-forest focus:text-ivory focus:px-4 focus:py-2 focus:rounded">
+      Aller au contenu
+    </a>
+
+    <header class="border-b border-ink/10">
+      <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/images/logo.png" alt="Eco Echo Savie" class="h-28 w-28 object-contain" />
+          <span class="hidden sm:flex flex-col leading-tight">
+            <span class="font-display font-semibold text-2xl md:text-3xl text-forest tracking-tight">Eco Echo Savie</span>
+            <span class="text-xs md:text-sm font-semibold tracking-[0.15em] uppercase text-clay mt-1">
+              Écologie traditionnelle africaine · Éthique environnementale
+            </span>
+          </span>
+        </a>
+
+        <nav aria-label="Navigation principale" class="hidden md:block">
+          <ul class="flex items-center gap-2 flex-wrap">
+            {nav.map((item) => (
+              <li><a href={item.href} class="inline-block px-4 py-2 rounded-lg text-base font-semibold text-ink bg-sage/70 hover:bg-forest hover:text-ivory transition-colors">{item.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a href="/en" class="text-sm text-ink/60 hover:text-forest transition-colors">EN</a>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation principale mobile" class="md:hidden border-t border-ink/10">
+        <ul class="max-w-6xl mx-auto px-6 py-3 flex flex-wrap gap-2">
+          {nav.map((item) => (
+            <li><a href={item.href} class="inline-block px-3 py-1.5 rounded-lg text-sm font-semibold text-ink bg-sage/70 hover:bg-forest hover:text-ivory transition-colors">{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenu">
+      <slot />
+    </main>
+
+    <footer class="mt-24 border-t border-ink/10 bg-forest text-ivory">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-12 md:grid-cols-[1.3fr,1fr,1fr]">
+   <div class="flex flex-col items-center text-center">
+  <img
+    src="/images/logo.png"
+    alt="Eco Echo Savie"
+    class="h-64 w-64 object-contain mb-5 bg-gold/15 rounded-2xl p-4 ring-4 ring-gold/40 shadow-lg"
+  />
+  <p class="font-display text-2xl text-gold mb-2">Eco Echo Savie</p>
+<p class="text-lg font-semibold text-ivory/85 whitespace-nowrap">
+  Penser l'écologie depuis l'Afrique. Dialoguer avec le monde.
+</p>
+</div>
+
+    <div>
+      <p class="text-base uppercase tracking-wide font-semibold mb-5 text-gold">Explorer</p>
+      <ul class="space-y-3 text-lg text-ivory/80">
+        {nav.map((item) => (
+          <li><a href={item.href} class="hover:text-ivory hover:underline underline-offset-4 transition-colors">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-base uppercase tracking-wide font-semibold mb-5 text-gold">Contact</p>
+      <dl class="space-y-4 text-lg text-ivory/80">
+        <div>
+          <dt class="text-sm text-ivory/50 uppercase tracking-wide">Boîte postale</dt>
+          <dd class="mt-0.5">09 BP Ouagadougou 1060, Burkina Faso</dd>
+        </div>
+        <div>
+          <dt class="text-sm text-ivory/50 uppercase tracking-wide">Téléphone</dt>
+          <dd class="mt-0.5"><a href="tel:+22651077071" class="hover:text-ivory hover:underline underline-offset-4 transition-colors">+226 51 07 70 71</a></dd>
+        </div>
+        <div>
+          <dt class="text-sm text-ivory/50 uppercase tracking-wide">Email</dt>
+          <dd class="mt-0.5"><a href="mailto:vivianesawadogo@yahoo.fr" class="hover:text-ivory hover:underline underline-offset-4 transition-colors">vivianesawadogo@yahoo.fr</a></dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="border-t border-ivory/15 py-5">
+    <p class="max-w-6xl mx-auto px-6 text-xs text-ivory/60">
+      © {new Date().getFullYear()} Eco Echo Savie. Tous droits réservés.
+    </p>
+  </div>
+</footer>
+    </body>
+  </html>

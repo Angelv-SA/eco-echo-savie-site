@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const domaines = [
+  "Conseil stratégique",
+  "Recherche appliquée",
+  "Formations",
+  "Révision de curricula",
+  "Valorisation des savoirs endogènes",
+  "Accompagnement des politiques publiques",
+  "Accompagnement des universités",
+  "Accompagnement des ONG",
+  "Accompagnement des collectivités",
+  "Conférences et interventions",
+];
+---
+
+<Layout title="Agir" description="Le cabinet Eco Echo Savie : conseil stratégique, recherche appliquée, formation et accompagnement.">
+  <section class="border-b border-ink/10 bg-sage">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-3">3 · Agir</p>
+      <h1 class="font-display text-3xl md:text-4xl text-forest leading-tight max-w-2xl">
+        Comment cette recherche transforme-t-elle l'action&nbsp;?
+      </h1>
+      <p class="mt-8 text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+        Cette rubrique correspond au cabinet lui-même : ses domaines d'intervention, au service
+        des institutions, des universités et des collectivités engagées dans une transition
+        écologique ancrée culturellement.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-wide text-ink/50 mb-6">Domaines d'intervention</p>
+    <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+      {domaines.map((d) => (
+        <li class="border-t border-ink/15 pt-3 text-ink/85">{d}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="border-t border-ink/10 bg-forest text-ivory">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm uppercase tracking-wide text-ivory/60 mb-3">Vous représentez une institution ?</p>
+      <p class="text-base md:text-lg leading-relaxed text-ivory/90 max-w-prose">
+        Eco Echo Savie accompagne universités, ONG, collectivités et institutions publiques
+        dans la contextualisation culturelle et éthique de leurs actions environnementales.
+      </p>
+      <a
+        href="/contacts"
+        class="mt-8 inline-flex items-center px-6 py-3 bg-ivory text-forest text-sm font-medium rounded hover:bg-gold hover:text-ink transition-colors"
+      >
+        Nous contacter
+      </a>
+    </div>
+  </section>
+</Layout>

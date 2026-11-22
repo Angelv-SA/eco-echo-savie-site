@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const dialogues = [
+  "Les sciences contemporaines",
+  "L'éthique environnementale",
+  "Les humanités environnementales",
+  "Les sciences sociales",
+  "Le développement durable",
+];
+---
+
+<Layout title="Penser" description="La vision scientifique d'Eco Echo Savie : l'écologie traditionnelle africaine comme champ de recherche à part entière.">
+  <section class="border-b border-ink/10 bg-sage">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-3">1 · Penser</p>
+      <h1 class="font-display text-3xl md:text-4xl text-forest leading-tight max-w-2xl">
+        L'écologie traditionnelle africaine comme champ scientifique à part entière
+      </h1>
+      <p class="mt-8 text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+        Cette rubrique constitue le socle scientifique du site. Elle présente la vision
+        développée par Eco Echo Savie, les fondements de l'écologie traditionnelle africaine,
+        et son dialogue avec les sciences contemporaines.
+      </p>
+    </div>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+    <p class="text-sm uppercase tracking-wide text-ink/50 mb-3">Une manière d'être au monde</p>
+    <p class="text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+      Dans les sociétés africaines traditionnelles, la relation à la nature relève d'une
+      dimension ontologique. L'éthique écologique y structure l'identité individuelle et
+      collective, et le respect de l'environnement procède d'un habitus culturel intériorisé,
+      transmis et socialement régulé, plutôt que d'une injonction extérieure ou normative. Ces
+      systèmes de pensée et de pratiques constituent, à ce titre, des ressources scientifiques
+      majeures pour repenser les fondements éthiques et culturels du développement durable en
+      Afrique.
+    </p>
+
+    <p class="mt-6 text-base md:text-lg leading-relaxed text-ink/85 max-w-prose">
+      L'écologie traditionnelle africaine apparaît ainsi comme un champ de recherche structurant
+      pour les sciences humaines et sociales : elle permet d'analyser finement les liens entre
+      éthique, comportements, systèmes de valeurs et pratiques environnementales, tout en
+      offrant des cadres conceptuels pertinents pour l'élaboration de politiques publiques et
+      de stratégies de développement durable davantage contextualisées.
+    </p>
+  </section>
+
+  <section class="border-t border-ink/10">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm uppercase tracking-wide text-ink/50 mb-6">En dialogue avec</p>
+      <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+        {dialogues.map((item) => (
+          <li class="border-t border-ink/15 pt-3 text-ink/85">{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="border-t border-ink/10 bg-forest text-ivory">
+    <div class="max-w-4xl mx-auto px-6 py-16 md:py-20">
+      <p class="text-sm uppercase tracking-wide text-ivory/60 mb-3">À venir dans cette rubrique</p>
+      <p class="text-base md:text-lg leading-relaxed text-ivory/90 max-w-prose">
+        Les fondements épistémologiques, les méthodes, les concepts et les critères de
+        scientificité de l'écologie traditionnelle africaine seront développés ici au fil de
+        l'avancement du contenu, avec ta tante.
+      </p>
+      <a
+        href="/rechercher"
+        class="mt-8 inline-flex items-center px-6 py-3 bg-ivory text-forest text-sm font-medium rounded hover:bg-gold hover:text-ink transition-colors"
+      >
+        Voir la rubrique Rechercher
+      </a>
+    </div>
+  </section>
+</Layout>
